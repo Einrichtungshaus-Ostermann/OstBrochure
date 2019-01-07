@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="../../../../engine/Shopware/Components/Plugin/schema/config.xsd">
+    <elements>
+
+        <element type="button">
+            <name>defaultButton</name>
+            <label><![CDATA[<b>Allgemeine Einstellungen</b>]]></label>
+        </element>
+
+        <element type="text">
+            <name>xml</name>
+            <label>XML</label>
+            <value>https://www.ostermann.de/webcatalog/xml/config.xml</value>
+            <description>Der Pfad bzw. der Link zur config.xml Datei.</description>
+        </element>
+
+        <element type="text">
+            <name>baseUrl</name>
+            <label>Basis-Url</label>
+            <value>https://www.ostermann.de/webcatalog/</value>
+            <description>Die Basis-Url für alle Links innerhalb der .xml Datei.</description>
+        </element>
+
+        <element type="button">
+            <name>seoButton</name>
+            <label><![CDATA[<b>SEO Einstellungen</b>]]></label>
+        </element>
+
+        <element type="text">
+            <name>seoUrl</name>
+            <label>SEO Url</label>
+            <value>prospekte</value>
+            <description><![CDATA[Hier können Sie eine SEO Url für die Übersicht der Prospekte hinterlegen. Diese Url leitet dann automatisch auf die Plugin Url weiter.<br /><b>Beispiel</b>: prospekte<br />https://www.domain.de/prospekte]]></description>
+        </element>
+
+    </elements>
+</config>
