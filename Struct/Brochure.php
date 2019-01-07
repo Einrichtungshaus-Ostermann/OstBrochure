@@ -86,8 +86,6 @@ class Brochure extends Struct
      * Setter method for the property.
      *
      * @param string $number
-     *
-     * @return void
      */
     public function setNumber(string $number)
     {
@@ -108,8 +106,6 @@ class Brochure extends Struct
      * Setter method for the property.
      *
      * @param string $name
-     *
-     * @return void
      */
     public function setName(string $name)
     {
@@ -130,8 +126,6 @@ class Brochure extends Struct
      * Setter method for the property.
      *
      * @param string $header
-     *
-     * @return void
      */
     public function setHeader(string $header)
     {
@@ -152,8 +146,6 @@ class Brochure extends Struct
      * Setter method for the property.
      *
      * @param string $info
-     *
-     * @return void
      */
     public function setInfo(string $info)
     {
@@ -174,8 +166,6 @@ class Brochure extends Struct
      * Setter method for the property.
      *
      * @param DateTime $startDate
-     *
-     * @return void
      */
     public function setStartDate(DateTime $startDate)
     {
@@ -196,8 +186,6 @@ class Brochure extends Struct
      * Setter method for the property.
      *
      * @param DateTime $endDate
-     *
-     * @return void
      */
     public function setEndDate(DateTime $endDate)
     {
@@ -218,8 +206,6 @@ class Brochure extends Struct
      * Setter method for the property.
      *
      * @param string $catalog
-     *
-     * @return void
      */
     public function setCatalog(string $catalog)
     {
@@ -240,8 +226,6 @@ class Brochure extends Struct
      * Setter method for the property.
      *
      * @param string $image
-     *
-     * @return void
      */
     public function setImage(string $image)
     {

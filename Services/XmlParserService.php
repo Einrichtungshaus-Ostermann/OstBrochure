@@ -12,9 +12,9 @@
 
 namespace OstBrochure\Services;
 
+use DateTime;
 use OstBrochure\Struct\Brochure;
 use SimpleXMLElement;
-use DateTime;
 
 class XmlParserService implements XmlParserServiceInterface
 {
@@ -28,14 +28,13 @@ class XmlParserService implements XmlParserServiceInterface
     /**
      * ...
      *
-     * @param array   $configuration
+     * @param array $configuration
      */
-    public function __construct( array $configuration )
+    public function __construct(array $configuration)
     {
         // set params
         $this->configuration = $configuration;
     }
-
 
     /**
      * ...
@@ -54,19 +53,17 @@ class XmlParserService implements XmlParserServiceInterface
         $xml = new SimpleXMLElement($str);
 
         // every valid brochure
-        $brochures = array();
+        $brochures = [];
 
         // loop them
-        foreach ( $xml->Webcatalog as $webcatalog )
-        {
+        foreach ($xml->Webcatalog as $webcatalog) {
             // set dates
             $start = new DateTime((string) $webcatalog->Start);
             $end = new DateTime((string) $webcatalog->End);
-            $today = new DateTime(date("d.m.Y"));
+            $today = new DateTime(date('d.m.Y'));
 
             // valid for current date?
-            if ($start <= $today && $end >= $today)
-            {
+            if ($start <= $today && $end >= $today) {
                 // get current variant
                 $variant = $webcatalog->WebCatalogVariant;
 
@@ -84,7 +81,7 @@ class XmlParserService implements XmlParserServiceInterface
                 $brochure->setImage($this->configuration['baseUrl'] . $variant->ImagePath);
 
                 // add it
-                array_push( $brochures, $brochure );
+                array_push($brochures, $brochure);
             }
         }
 

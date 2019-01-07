@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-/**
+/*
  * Einrichtungshaus Ostermann GmbH & Co. KG - Brochure
  *
  * @package   OstBrochure
@@ -52,12 +52,12 @@ class Shopware_Controllers_Frontend_OstBrochure extends Enlight_Controller_Actio
     public function indexAction()
     {
         /* @var $xmlParser XmlParserServiceInterface */
-        $xmlParser = $this->get( "ost_brochure.xml_parser_service" );
+        $xmlParser = $this->get('ost_brochure.xml_parser_service');
 
         // get them
         $brochures = $xmlParser->getBrochures();
 
         // assign to template
-        $this->get( "template" )->assign( "ostBrochures", $brochures );
+        $this->get('template')->assign('ostBrochures', $brochures);
     }
 }

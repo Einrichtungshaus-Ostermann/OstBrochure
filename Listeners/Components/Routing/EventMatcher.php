@@ -28,17 +28,17 @@ class EventMatcher
      *
      * @var array
      */
-    protected $route = array(
-        'controller' => "OstBrochure",
-        'action'     => "index"
-    );
+    protected $route = [
+        'controller' => 'OstBrochure',
+        'action'     => 'index'
+    ];
 
     /**
      * ...
      *
-     * @param array   $configuration
+     * @param array $configuration
      */
-    public function __construct( array $configuration )
+    public function __construct(array $configuration)
     {
         // set params
         $this->configuration = $configuration;
@@ -47,22 +47,23 @@ class EventMatcher
     /**
      * ...
      *
-     * @param EventArgs   $arguments
+     * @param EventArgs $arguments
      *
      * @return mixed
      */
-    public function changeRoute( EventArgs $arguments )
+    public function changeRoute(EventArgs $arguments)
     {
         // get the current path
-        $path = $arguments->get( "request" )->getPathInfo();
+        $path = $arguments->get('request')->getPathInfo();
 
         // trim the slash
-        $path = ltrim( $path, "/" );
+        $path = ltrim($path, '/');
 
         // is this not return?!
-        if ( ( empty( $this->configuration['seoUrl'] ) ) or ( strtolower( $path ) != strtolower( $this->configuration['seoUrl'] ) ) )
+        if ((empty($this->configuration['seoUrl'])) || (strtolower($path) !== strtolower($this->configuration['seoUrl']))) {
             // nothing to do
             return null;
+        }
 
         // reroute to return
         return $this->route;
