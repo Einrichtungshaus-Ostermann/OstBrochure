@@ -3,13 +3,17 @@
 /**
  * Einrichtungshaus Ostermann GmbH & Co. KG - Brochure
  *
- * Brochure
+ * Reads every currently active brochure from a .xml file and displays
+ * them in the frontend.
  *
  * 1.0.0
  * - initial release
  *
  * 1.0.1
  * - cs fix
+ *
+ * 1.0.2
+ * - fixed plugin name
  *
  * @package   OstBrochure
  *
