@@ -31,30 +31,35 @@
 {* main content *}
 {block name='frontend_index_content'}
 
-    {* title *}
-    <h1>ÜBERSICHT ÜBER UNSERE PROSPEKTE</h1>
+    {* inner content container *}
+    <div class="content ost-brochure--content">
 
-    {* every brochure *}
-    {foreach $ostBrochures as $brochure}
+        {* title *}
+        <h1>Übersicht über unsere Projekte</h1>
 
-        <div class="ost-brochures is--brochure">
-            <h3>{$brochure->getHeader()}</h3>
-            <div class="img--container">
-                <img src="{$brochure->getImage()}">
+        {* every brochure *}
+        {foreach $ostBrochures as $brochure}
+
+            <div class="ost-brochures is--brochure">
+                <h3>{$brochure->getHeader()}</h3>
+                <div class="img--container">
+                    <a href="{$brochure->getCatalog()}"><img src="{$brochure->getImage()}"></a>
+                </div>
+                <div class="info--container">
+                    Preisgültigkeit: <br />
+                    vom {$brochure->getStartDate()->format( "d.m.Y" )} bis {$brochure->getEndDate()->format( "d.m.Y" )}
+                    <br /><br />
+                    {$brochure->getName()}
+                    <br />
+                    {$brochure->getInfo()}
+                    <br /><br />
+                    <a href="{$brochure->getCatalog()}">Jetzt online blättern</a>
+                </div>
+                <div style="clear: both;"></div>
             </div>
-            <div class="info--container">
-                Preisgültigkeit: <br />
-                vom {$brochure->getStartDate()->format( "d.m.Y" )} bis {$brochure->getEndDate()->format( "d.m.Y" )}
-                <br /><br />
-                {$brochure->getName()}
-                <br />
-                {$brochure->getInfo()}
-                <br /><br />
-                <a href="{$brochure->getCatalog()}">Jetzt online blättern</a>
-            </div>
-            <div style="clear: both;"></div>
-        </div>
 
-    {/foreach}
+        {/foreach}
+
+    </div>
 
 {/block}
